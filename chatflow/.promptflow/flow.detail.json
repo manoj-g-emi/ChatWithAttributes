@@ -1,0 +1,1083 @@
+{
+  "flow_runs": [
+    {
+      "run_id": "87197260-f375-4abc-9df7-7e0642fbd268_0",
+      "status": "Completed",
+      "error": null,
+      "inputs": {
+        "chat_history": [],
+        "question": "Growth of Apple in Argentina?",
+        "config": {
+          "OPENAI_API_KEY": "b6068890be79491a904408c62e66077a",
+          "EMBEDDING_MODEL_DEPLOYMENT_NAME": "text-embedding-ada-002",
+          "CHAT_MODEL_DEPLOYMENT_NAME": "gpt-35-turbo",
+          "PROMPT_TOKEN_LIMIT": 3000,
+          "MAX_COMPLETION_TOKENS": 1024,
+          "VERBOSE": true,
+          "CHUNK_SIZE": 1024,
+          "CHUNK_OVERLAP": 64
+        }
+      },
+      "output": {
+        "answer": "The growth rate of Apple in Argentina from 2021 to 2022 is -5.26%."
+      },
+      "metrics": null,
+      "request": null,
+      "parent_run_id": "87197260-f375-4abc-9df7-7e0642fbd268",
+      "root_run_id": "87197260-f375-4abc-9df7-7e0642fbd268",
+      "source_run_id": null,
+      "flow_id": "default_flow_id",
+      "start_time": "2024-10-28T11:54:54.883932Z",
+      "end_time": "2024-10-28T11:54:57.996937Z",
+      "index": 0,
+      "api_calls": [
+        {
+          "name": "flow",
+          "node_name": "flow",
+          "type": "Flow",
+          "start_time": 1730096694.883932,
+          "end_time": 1730096697.996937,
+          "children": [
+            {
+              "name": "setup_env",
+              "type": "Function",
+              "inputs": {
+                "connection": "openaiconnection",
+                "config": {
+                  "OPENAI_API_KEY": "b6068890be79491a904408c62e66077a",
+                  "EMBEDDING_MODEL_DEPLOYMENT_NAME": "text-embedding-ada-002",
+                  "CHAT_MODEL_DEPLOYMENT_NAME": "gpt-35-turbo",
+                  "PROMPT_TOKEN_LIMIT": 3000,
+                  "MAX_COMPLETION_TOKENS": 1024,
+                  "VERBOSE": true,
+                  "CHUNK_SIZE": 1024,
+                  "CHUNK_OVERLAP": 64
+                }
+              },
+              "output": "Ready",
+              "start_time": 1730096694.887927,
+              "end_time": 1730096694.888933,
+              "error": null,
+              "children": [],
+              "node_name": "setup_env",
+              "parent_id": "",
+              "id": "6974282d-d3d7-41d8-bf51-ca321222398d",
+              "function": "setup_env",
+              "system_metrics": {}
+            },
+            {
+              "name": "setup_ai_search",
+              "type": "Function",
+              "inputs": {
+                "connection": "aisearch",
+                "config": {
+                  "OPENAI_API_KEY": "b6068890be79491a904408c62e66077a",
+                  "EMBEDDING_MODEL_DEPLOYMENT_NAME": "text-embedding-ada-002",
+                  "CHAT_MODEL_DEPLOYMENT_NAME": "gpt-35-turbo",
+                  "PROMPT_TOKEN_LIMIT": 3000,
+                  "MAX_COMPLETION_TOKENS": 1024,
+                  "VERBOSE": true,
+                  "CHUNK_SIZE": 1024,
+                  "CHUNK_OVERLAP": 64
+                }
+              },
+              "output": "Ready",
+              "start_time": 1730096694.890935,
+              "end_time": 1730096694.892936,
+              "error": null,
+              "children": [],
+              "node_name": "setup_ai_search",
+              "parent_id": "",
+              "id": "e7b8142f-ce1d-44b6-93d6-a60dc4357c8d",
+              "function": "setup_ai_search",
+              "system_metrics": {}
+            },
+            {
+              "name": "my_python_tool",
+              "type": "Function",
+              "inputs": {
+                "is_env_ready": "Ready",
+                "question": "Growth of Apple in Argentina?"
+              },
+              "output": [
+                {
+                  "Count1": "19",
+                  "Country": "Argentina",
+                  "Count2": "18",
+                  "Attribute_Groups": "Flavour",
+                  "Growth": "-5.2631578947368421052631578900",
+                  "AzureSearch_DocumentKey": "aHR0cHM6Ly9lbWl0c2xsbXdvcmtzaG9wd2VzYS5ibG9iLmNvcmUud2luZG93cy5uZXQvbWFub2otYXR0cmlidXRlcy9hdHRyaWJ1dGVzLWNhdGVnb3J5LTIwMjEtMjAyMi5jc3Y7MjI1",
+                  "Attributes": "Apple",
+                  "@search.score": 9.777804,
+                  "@search.reranker_score": null,
+                  "@search.highlights": null,
+                  "@search.captions": null
+                },
+                {
+                  "Count1": "0",
+                  "Country": "Argentina",
+                  "Count2": "0",
+                  "Attribute_Groups": "Product Type",
+                  "Growth": "0.0",
+                  "AzureSearch_DocumentKey": "aHR0cHM6Ly9lbWl0c2xsbXdvcmtzaG9wd2VzYS5ibG9iLmNvcmUud2luZG93cy5uZXQvbWFub2otYXR0cmlidXRlcy9hdHRyaWJ1dGVzLWNhdGVnb3J5LTIwMjEtMjAyMi5jc3Y7NDEx0",
+                  "Attributes": "Apple Cider",
+                  "@search.score": 7.6129117,
+                  "@search.reranker_score": null,
+                  "@search.highlights": null,
+                  "@search.captions": null
+                },
+                {
+                  "Count1": "44",
+                  "Country": "Finland",
+                  "Count2": "65",
+                  "Attribute_Groups": "Flavour",
+                  "Growth": "47.727272727272727272727272730",
+                  "AzureSearch_DocumentKey": "aHR0cHM6Ly9lbWl0c2xsbXdvcmtzaG9wd2VzYS5ibG9iLmNvcmUud2luZG93cy5uZXQvbWFub2otYXR0cmlidXRlcy9hdHRyaWJ1dGVzLWNhdGVnb3J5LTIwMjEtMjAyMi5jc3Y7Nzg3OQ2",
+                  "Attributes": "Apple",
+                  "@search.score": 7.5233197,
+                  "@search.reranker_score": null,
+                  "@search.highlights": null,
+                  "@search.captions": null
+                },
+                {
+                  "Count1": "46",
+                  "Country": "Australia",
+                  "Count2": "64",
+                  "Attribute_Groups": "Flavour",
+                  "Growth": "39.130434782608695652173913040",
+                  "AzureSearch_DocumentKey": "aHR0cHM6Ly9lbWl0c2xsbXdvcmtzaG9wd2VzYS5ibG9iLmNvcmUud2luZG93cy5uZXQvbWFub2otYXR0cmlidXRlcy9hdHRyaWJ1dGVzLWNhdGVnb3J5LTIwMjEtMjAyMi5jc3Y7ODk10",
+                  "Attributes": "Apple",
+                  "@search.score": 7.511792,
+                  "@search.reranker_score": null,
+                  "@search.highlights": null,
+                  "@search.captions": null
+                },
+                {
+                  "Count1": "0",
+                  "Country": "Argentina",
+                  "Count2": "0",
+                  "Attribute_Groups": "Packaging",
+                  "Growth": "0.0",
+                  "AzureSearch_DocumentKey": "aHR0cHM6Ly9lbWl0c2xsbXdvcmtzaG9wd2VzYS5ibG9iLmNvcmUud2luZG93cy5uZXQvbWFub2otYXR0cmlidXRlcy9hdHRyaWJ1dGVzLWNhdGVnb3J5LTIwMjEtMjAyMi5jc3Y7MzM00",
+                  "Attributes": "Bag In Box",
+                  "@search.score": 7.0167494,
+                  "@search.reranker_score": null,
+                  "@search.highlights": null,
+                  "@search.captions": null
+                }
+              ],
+              "start_time": 1730096694.893925,
+              "end_time": 1730096696.243262,
+              "error": null,
+              "children": [],
+              "node_name": "search_content",
+              "parent_id": "",
+              "id": "fb6a6af4-6ea3-4869-be8a-a803475a31af",
+              "function": "my_python_tool",
+              "system_metrics": {}
+            },
+            {
+              "name": "qna",
+              "type": "Function",
+              "inputs": {
+                "is_env_ready": "Ready",
+                "question": "Growth of Apple in Argentina?",
+                "grounded_context": [
+                  {
+                    "Count1": "19",
+                    "Country": "Argentina",
+                    "Count2": "18",
+                    "Attribute_Groups": "Flavour",
+                    "Growth": "-5.2631578947368421052631578900",
+                    "AzureSearch_DocumentKey": "aHR0cHM6Ly9lbWl0c2xsbXdvcmtzaG9wd2VzYS5ibG9iLmNvcmUud2luZG93cy5uZXQvbWFub2otYXR0cmlidXRlcy9hdHRyaWJ1dGVzLWNhdGVnb3J5LTIwMjEtMjAyMi5jc3Y7MjI1",
+                    "Attributes": "Apple",
+                    "@search.score": 9.777804,
+                    "@search.reranker_score": null,
+                    "@search.highlights": null,
+                    "@search.captions": null
+                  },
+                  {
+                    "Count1": "0",
+                    "Country": "Argentina",
+                    "Count2": "0",
+                    "Attribute_Groups": "Product Type",
+                    "Growth": "0.0",
+                    "AzureSearch_DocumentKey": "aHR0cHM6Ly9lbWl0c2xsbXdvcmtzaG9wd2VzYS5ibG9iLmNvcmUud2luZG93cy5uZXQvbWFub2otYXR0cmlidXRlcy9hdHRyaWJ1dGVzLWNhdGVnb3J5LTIwMjEtMjAyMi5jc3Y7NDEx0",
+                    "Attributes": "Apple Cider",
+                    "@search.score": 7.6129117,
+                    "@search.reranker_score": null,
+                    "@search.highlights": null,
+                    "@search.captions": null
+                  },
+                  {
+                    "Count1": "44",
+                    "Country": "Finland",
+                    "Count2": "65",
+                    "Attribute_Groups": "Flavour",
+                    "Growth": "47.727272727272727272727272730",
+                    "AzureSearch_DocumentKey": "aHR0cHM6Ly9lbWl0c2xsbXdvcmtzaG9wd2VzYS5ibG9iLmNvcmUud2luZG93cy5uZXQvbWFub2otYXR0cmlidXRlcy9hdHRyaWJ1dGVzLWNhdGVnb3J5LTIwMjEtMjAyMi5jc3Y7Nzg3OQ2",
+                    "Attributes": "Apple",
+                    "@search.score": 7.5233197,
+                    "@search.reranker_score": null,
+                    "@search.highlights": null,
+                    "@search.captions": null
+                  },
+                  {
+                    "Count1": "46",
+                    "Country": "Australia",
+                    "Count2": "64",
+                    "Attribute_Groups": "Flavour",
+                    "Growth": "39.130434782608695652173913040",
+                    "AzureSearch_DocumentKey": "aHR0cHM6Ly9lbWl0c2xsbXdvcmtzaG9wd2VzYS5ibG9iLmNvcmUud2luZG93cy5uZXQvbWFub2otYXR0cmlidXRlcy9hdHRyaWJ1dGVzLWNhdGVnb3J5LTIwMjEtMjAyMi5jc3Y7ODk10",
+                    "Attributes": "Apple",
+                    "@search.score": 7.511792,
+                    "@search.reranker_score": null,
+                    "@search.highlights": null,
+                    "@search.captions": null
+                  },
+                  {
+                    "Count1": "0",
+                    "Country": "Argentina",
+                    "Count2": "0",
+                    "Attribute_Groups": "Packaging",
+                    "Growth": "0.0",
+                    "AzureSearch_DocumentKey": "aHR0cHM6Ly9lbWl0c2xsbXdvcmtzaG9wd2VzYS5ibG9iLmNvcmUud2luZG93cy5uZXQvbWFub2otYXR0cmlidXRlcy9hdHRyaWJ1dGVzLWNhdGVnb3J5LTIwMjEtMjAyMi5jc3Y7MzM00",
+                    "Attributes": "Bag In Box",
+                    "@search.score": 7.0167494,
+                    "@search.reranker_score": null,
+                    "@search.highlights": null,
+                    "@search.captions": null
+                  }
+                ]
+              },
+              "output": "The growth rate of Apple in Argentina from 2021 to 2022 is -5.26%.",
+              "start_time": 1730096696.245259,
+              "end_time": 1730096697.994937,
+              "error": null,
+              "children": [
+                {
+                  "name": "openai_chat",
+                  "type": "LLM",
+                  "inputs": {
+                    "model": "gpt-35-turbo",
+                    "messages": [
+                      {
+                        "role": "system",
+                        "content": "Help with answering growth rate of different attributes associated to different countries in 2021 & 2022. Consider Count1 as 2021 and Count2 as 2022 from the data. Use Growth field value for the same. No need to let user know meta info of groundedcontext entries."
+                      },
+                      {
+                        "role": "user",
+                        "content": "Context: [{\"Count1\": \"19\", \"Country\": \"Argentina\", \"Count2\": \"18\", \"Attribute_Groups\": \"Flavour\", \"Growth\": \"-5.2631578947368421052631578900\", \"AzureSearch_DocumentKey\": \"aHR0cHM6Ly9lbWl0c2xsbXdvcmtzaG9wd2VzYS5ibG9iLmNvcmUud2luZG93cy5uZXQvbWFub2otYXR0cmlidXRlcy9hdHRyaWJ1dGVzLWNhdGVnb3J5LTIwMjEtMjAyMi5jc3Y7MjI1\", \"Attributes\": \"Apple\", \"@search.score\": 9.777804, \"@search.reranker_score\": null, \"@search.highlights\": null, \"@search.captions\": null}, {\"Count1\": \"0\", \"Country\": \"Argentina\", \"Count2\": \"0\", \"Attribute_Groups\": \"Product Type\", \"Growth\": \"0.0\", \"AzureSearch_DocumentKey\": \"aHR0cHM6Ly9lbWl0c2xsbXdvcmtzaG9wd2VzYS5ibG9iLmNvcmUud2luZG93cy5uZXQvbWFub2otYXR0cmlidXRlcy9hdHRyaWJ1dGVzLWNhdGVnb3J5LTIwMjEtMjAyMi5jc3Y7NDEx0\", \"Attributes\": \"Apple Cider\", \"@search.score\": 7.6129117, \"@search.reranker_score\": null, \"@search.highlights\": null, \"@search.captions\": null}, {\"Count1\": \"44\", \"Country\": \"Finland\", \"Count2\": \"65\", \"Attribute_Groups\": \"Flavour\", \"Growth\": \"47.727272727272727272727272730\", \"AzureSearch_DocumentKey\": \"aHR0cHM6Ly9lbWl0c2xsbXdvcmtzaG9wd2VzYS5ibG9iLmNvcmUud2luZG93cy5uZXQvbWFub2otYXR0cmlidXRlcy9hdHRyaWJ1dGVzLWNhdGVnb3J5LTIwMjEtMjAyMi5jc3Y7Nzg3OQ2\", \"Attributes\": \"Apple\", \"@search.score\": 7.5233197, \"@search.reranker_score\": null, \"@search.highlights\": null, \"@search.captions\": null}, {\"Count1\": \"46\", \"Country\": \"Australia\", \"Count2\": \"64\", \"Attribute_Groups\": \"Flavour\", \"Growth\": \"39.130434782608695652173913040\", \"AzureSearch_DocumentKey\": \"aHR0cHM6Ly9lbWl0c2xsbXdvcmtzaG9wd2VzYS5ibG9iLmNvcmUud2luZG93cy5uZXQvbWFub2otYXR0cmlidXRlcy9hdHRyaWJ1dGVzLWNhdGVnb3J5LTIwMjEtMjAyMi5jc3Y7ODk10\", \"Attributes\": \"Apple\", \"@search.score\": 7.511792, \"@search.reranker_score\": null, \"@search.highlights\": null, \"@search.captions\": null}, {\"Count1\": \"0\", \"Country\": \"Argentina\", \"Count2\": \"0\", \"Attribute_Groups\": \"Packaging\", \"Growth\": \"0.0\", \"AzureSearch_DocumentKey\": \"aHR0cHM6Ly9lbWl0c2xsbXdvcmtzaG9wd2VzYS5ibG9iLmNvcmUud2luZG93cy5uZXQvbWFub2otYXR0cmlidXRlcy9hdHRyaWJ1dGVzLWNhdGVnb3J5LTIwMjEtMjAyMi5jc3Y7MzM00\", \"Attributes\": \"Bag In Box\", \"@search.score\": 7.0167494, \"@search.reranker_score\": null, \"@search.highlights\": null, \"@search.captions\": null}]\n\n Query: Growth of Apple in Argentina?"
+                      }
+                    ]
+                  },
+                  "output": {
+                    "id": "chatcmpl-ANIcXxEoJpm1Sacf2U6SvDFm0LwKz",
+                    "choices": [
+                      {
+                        "finish_reason": "stop",
+                        "index": 0,
+                        "logprobs": null,
+                        "message": {
+                          "content": "The growth rate of Apple in Argentina from 2021 to 2022 is -5.26%.",
+                          "role": "assistant",
+                          "function_call": null,
+                          "tool_calls": null
+                        },
+                        "content_filter_results": {
+                          "hate": {
+                            "filtered": false,
+                            "severity": "safe"
+                          },
+                          "self_harm": {
+                            "filtered": false,
+                            "severity": "safe"
+                          },
+                          "sexual": {
+                            "filtered": false,
+                            "severity": "safe"
+                          },
+                          "violence": {
+                            "filtered": false,
+                            "severity": "safe"
+                          }
+                        }
+                      }
+                    ],
+                    "created": 1730116485,
+                    "model": "gpt-35-turbo",
+                    "object": "chat.completion",
+                    "system_fingerprint": "fp_808245b034",
+                    "usage": {
+                      "completion_tokens": 21,
+                      "prompt_tokens": 1050,
+                      "total_tokens": 1071
+                    },
+                    "prompt_filter_results": [
+                      {
+                        "prompt_index": 0,
+                        "content_filter_results": {
+                          "hate": {
+                            "filtered": false,
+                            "severity": "safe"
+                          },
+                          "jailbreak": {
+                            "filtered": false,
+                            "detected": false
+                          },
+                          "self_harm": {
+                            "filtered": false,
+                            "severity": "safe"
+                          },
+                          "sexual": {
+                            "filtered": false,
+                            "severity": "safe"
+                          },
+                          "violence": {
+                            "filtered": false,
+                            "severity": "safe"
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "start_time": 1730096696.520486,
+                  "end_time": 1730096697.994937,
+                  "error": null,
+                  "children": [],
+                  "node_name": null,
+                  "parent_id": "86b810bc-12e3-4b52-b4b4-0a2b2d6eb80e",
+                  "id": "44b15ac0-587e-4b7a-8630-57e3b8df8bfb",
+                  "function": "openai.resources.chat.completions.Completions.create",
+                  "system_metrics": {
+                    "completion_tokens": 21,
+                    "prompt_tokens": 1050,
+                    "total_tokens": 1071
+                  }
+                }
+              ],
+              "node_name": "qna",
+              "parent_id": "",
+              "id": "86b810bc-12e3-4b52-b4b4-0a2b2d6eb80e",
+              "function": "qna",
+              "system_metrics": {
+                "completion_tokens": 21,
+                "prompt_tokens": 1050,
+                "total_tokens": 1071
+              }
+            }
+          ],
+          "system_metrics": {
+            "duration": 3.113005,
+            "prompt_tokens": 1050,
+            "completion_tokens": 21,
+            "total_tokens": 1071
+          },
+          "inputs": {
+            "chat_history": [],
+            "question": "Growth of Apple in Argentina?",
+            "config": {
+              "OPENAI_API_KEY": "b6068890be79491a904408c62e66077a",
+              "EMBEDDING_MODEL_DEPLOYMENT_NAME": "text-embedding-ada-002",
+              "CHAT_MODEL_DEPLOYMENT_NAME": "gpt-35-turbo",
+              "PROMPT_TOKEN_LIMIT": 3000,
+              "MAX_COMPLETION_TOKENS": 1024,
+              "VERBOSE": true,
+              "CHUNK_SIZE": 1024,
+              "CHUNK_OVERLAP": 64
+            }
+          },
+          "output": {
+            "answer": "The growth rate of Apple in Argentina from 2021 to 2022 is -5.26%."
+          },
+          "error": null
+        }
+      ],
+      "name": "",
+      "description": "",
+      "tags": null,
+      "system_metrics": {
+        "duration": 3.113005,
+        "prompt_tokens": 1050,
+        "completion_tokens": 21,
+        "total_tokens": 1071
+      },
+      "result": {
+        "answer": "The growth rate of Apple in Argentina from 2021 to 2022 is -5.26%."
+      },
+      "upload_metrics": false,
+      "otel_trace_id": "0x561074822c4c0e63f21665c2fc3aba49",
+      "message_format": "basic"
+    }
+  ],
+  "node_runs": [
+    {
+      "node": "setup_env",
+      "flow_run_id": "87197260-f375-4abc-9df7-7e0642fbd268",
+      "run_id": "87197260-f375-4abc-9df7-7e0642fbd268_setup_env_0",
+      "status": "Completed",
+      "inputs": {
+        "connection": "openaiconnection",
+        "config": {
+          "OPENAI_API_KEY": "b6068890be79491a904408c62e66077a",
+          "EMBEDDING_MODEL_DEPLOYMENT_NAME": "text-embedding-ada-002",
+          "CHAT_MODEL_DEPLOYMENT_NAME": "gpt-35-turbo",
+          "PROMPT_TOKEN_LIMIT": 3000,
+          "MAX_COMPLETION_TOKENS": 1024,
+          "VERBOSE": true,
+          "CHUNK_SIZE": 1024,
+          "CHUNK_OVERLAP": 64
+        }
+      },
+      "output": "Ready",
+      "metrics": null,
+      "error": null,
+      "parent_run_id": "87197260-f375-4abc-9df7-7e0642fbd268_0",
+      "start_time": "2024-10-28T11:54:54.887927Z",
+      "end_time": "2024-10-28T11:54:54.888933Z",
+      "index": 0,
+      "api_calls": [
+        {
+          "name": "setup_env",
+          "type": "Function",
+          "inputs": {
+            "connection": "openaiconnection",
+            "config": {
+              "OPENAI_API_KEY": "b6068890be79491a904408c62e66077a",
+              "EMBEDDING_MODEL_DEPLOYMENT_NAME": "text-embedding-ada-002",
+              "CHAT_MODEL_DEPLOYMENT_NAME": "gpt-35-turbo",
+              "PROMPT_TOKEN_LIMIT": 3000,
+              "MAX_COMPLETION_TOKENS": 1024,
+              "VERBOSE": true,
+              "CHUNK_SIZE": 1024,
+              "CHUNK_OVERLAP": 64
+            }
+          },
+          "output": "Ready",
+          "start_time": 1730096694.887927,
+          "end_time": 1730096694.888933,
+          "error": null,
+          "children": [],
+          "node_name": "setup_env",
+          "parent_id": "",
+          "id": "6974282d-d3d7-41d8-bf51-ca321222398d",
+          "function": "setup_env",
+          "system_metrics": {}
+        }
+      ],
+      "cached_run_id": null,
+      "cached_flow_run_id": null,
+      "logs": {
+        "stdout": "",
+        "stderr": ""
+      },
+      "system_metrics": {
+        "duration": 0.001006
+      },
+      "result": "Ready",
+      "message_format": "basic"
+    },
+    {
+      "node": "setup_ai_search",
+      "flow_run_id": "87197260-f375-4abc-9df7-7e0642fbd268",
+      "run_id": "87197260-f375-4abc-9df7-7e0642fbd268_setup_ai_search_0",
+      "status": "Completed",
+      "inputs": {
+        "connection": "aisearch",
+        "config": {
+          "OPENAI_API_KEY": "b6068890be79491a904408c62e66077a",
+          "EMBEDDING_MODEL_DEPLOYMENT_NAME": "text-embedding-ada-002",
+          "CHAT_MODEL_DEPLOYMENT_NAME": "gpt-35-turbo",
+          "PROMPT_TOKEN_LIMIT": 3000,
+          "MAX_COMPLETION_TOKENS": 1024,
+          "VERBOSE": true,
+          "CHUNK_SIZE": 1024,
+          "CHUNK_OVERLAP": 64
+        }
+      },
+      "output": "Ready",
+      "metrics": null,
+      "error": null,
+      "parent_run_id": "87197260-f375-4abc-9df7-7e0642fbd268_0",
+      "start_time": "2024-10-28T11:54:54.890935Z",
+      "end_time": "2024-10-28T11:54:54.892936Z",
+      "index": 0,
+      "api_calls": [
+        {
+          "name": "setup_ai_search",
+          "type": "Function",
+          "inputs": {
+            "connection": "aisearch",
+            "config": {
+              "OPENAI_API_KEY": "b6068890be79491a904408c62e66077a",
+              "EMBEDDING_MODEL_DEPLOYMENT_NAME": "text-embedding-ada-002",
+              "CHAT_MODEL_DEPLOYMENT_NAME": "gpt-35-turbo",
+              "PROMPT_TOKEN_LIMIT": 3000,
+              "MAX_COMPLETION_TOKENS": 1024,
+              "VERBOSE": true,
+              "CHUNK_SIZE": 1024,
+              "CHUNK_OVERLAP": 64
+            }
+          },
+          "output": "Ready",
+          "start_time": 1730096694.890935,
+          "end_time": 1730096694.892936,
+          "error": null,
+          "children": [],
+          "node_name": "setup_ai_search",
+          "parent_id": "",
+          "id": "e7b8142f-ce1d-44b6-93d6-a60dc4357c8d",
+          "function": "setup_ai_search",
+          "system_metrics": {}
+        }
+      ],
+      "cached_run_id": null,
+      "cached_flow_run_id": null,
+      "logs": {
+        "stdout": "[2024-10-28T11:54:54+0000] **data_scrubbed**\n",
+        "stderr": ""
+      },
+      "system_metrics": {
+        "duration": 0.002001
+      },
+      "result": "Ready",
+      "message_format": "basic"
+    },
+    {
+      "node": "search_content",
+      "flow_run_id": "87197260-f375-4abc-9df7-7e0642fbd268",
+      "run_id": "87197260-f375-4abc-9df7-7e0642fbd268_search_content_0",
+      "status": "Completed",
+      "inputs": {
+        "is_env_ready": "Ready",
+        "question": "Growth of Apple in Argentina?"
+      },
+      "output": [
+        {
+          "Count1": "19",
+          "Country": "Argentina",
+          "Count2": "18",
+          "Attribute_Groups": "Flavour",
+          "Growth": "-5.2631578947368421052631578900",
+          "AzureSearch_DocumentKey": "aHR0cHM6Ly9lbWl0c2xsbXdvcmtzaG9wd2VzYS5ibG9iLmNvcmUud2luZG93cy5uZXQvbWFub2otYXR0cmlidXRlcy9hdHRyaWJ1dGVzLWNhdGVnb3J5LTIwMjEtMjAyMi5jc3Y7MjI1",
+          "Attributes": "Apple",
+          "@search.score": 9.777804,
+          "@search.reranker_score": null,
+          "@search.highlights": null,
+          "@search.captions": null
+        },
+        {
+          "Count1": "0",
+          "Country": "Argentina",
+          "Count2": "0",
+          "Attribute_Groups": "Product Type",
+          "Growth": "0.0",
+          "AzureSearch_DocumentKey": "aHR0cHM6Ly9lbWl0c2xsbXdvcmtzaG9wd2VzYS5ibG9iLmNvcmUud2luZG93cy5uZXQvbWFub2otYXR0cmlidXRlcy9hdHRyaWJ1dGVzLWNhdGVnb3J5LTIwMjEtMjAyMi5jc3Y7NDEx0",
+          "Attributes": "Apple Cider",
+          "@search.score": 7.6129117,
+          "@search.reranker_score": null,
+          "@search.highlights": null,
+          "@search.captions": null
+        },
+        {
+          "Count1": "44",
+          "Country": "Finland",
+          "Count2": "65",
+          "Attribute_Groups": "Flavour",
+          "Growth": "47.727272727272727272727272730",
+          "AzureSearch_DocumentKey": "aHR0cHM6Ly9lbWl0c2xsbXdvcmtzaG9wd2VzYS5ibG9iLmNvcmUud2luZG93cy5uZXQvbWFub2otYXR0cmlidXRlcy9hdHRyaWJ1dGVzLWNhdGVnb3J5LTIwMjEtMjAyMi5jc3Y7Nzg3OQ2",
+          "Attributes": "Apple",
+          "@search.score": 7.5233197,
+          "@search.reranker_score": null,
+          "@search.highlights": null,
+          "@search.captions": null
+        },
+        {
+          "Count1": "46",
+          "Country": "Australia",
+          "Count2": "64",
+          "Attribute_Groups": "Flavour",
+          "Growth": "39.130434782608695652173913040",
+          "AzureSearch_DocumentKey": "aHR0cHM6Ly9lbWl0c2xsbXdvcmtzaG9wd2VzYS5ibG9iLmNvcmUud2luZG93cy5uZXQvbWFub2otYXR0cmlidXRlcy9hdHRyaWJ1dGVzLWNhdGVnb3J5LTIwMjEtMjAyMi5jc3Y7ODk10",
+          "Attributes": "Apple",
+          "@search.score": 7.511792,
+          "@search.reranker_score": null,
+          "@search.highlights": null,
+          "@search.captions": null
+        },
+        {
+          "Count1": "0",
+          "Country": "Argentina",
+          "Count2": "0",
+          "Attribute_Groups": "Packaging",
+          "Growth": "0.0",
+          "AzureSearch_DocumentKey": "aHR0cHM6Ly9lbWl0c2xsbXdvcmtzaG9wd2VzYS5ibG9iLmNvcmUud2luZG93cy5uZXQvbWFub2otYXR0cmlidXRlcy9hdHRyaWJ1dGVzLWNhdGVnb3J5LTIwMjEtMjAyMi5jc3Y7MzM00",
+          "Attributes": "Bag In Box",
+          "@search.score": 7.0167494,
+          "@search.reranker_score": null,
+          "@search.highlights": null,
+          "@search.captions": null
+        }
+      ],
+      "metrics": null,
+      "error": null,
+      "parent_run_id": "87197260-f375-4abc-9df7-7e0642fbd268_0",
+      "start_time": "2024-10-28T11:54:54.893925Z",
+      "end_time": "2024-10-28T11:54:56.243262Z",
+      "index": 0,
+      "api_calls": [
+        {
+          "name": "my_python_tool",
+          "type": "Function",
+          "inputs": {
+            "is_env_ready": "Ready",
+            "question": "Growth of Apple in Argentina?"
+          },
+          "output": [
+            {
+              "Count1": "19",
+              "Country": "Argentina",
+              "Count2": "18",
+              "Attribute_Groups": "Flavour",
+              "Growth": "-5.2631578947368421052631578900",
+              "AzureSearch_DocumentKey": "aHR0cHM6Ly9lbWl0c2xsbXdvcmtzaG9wd2VzYS5ibG9iLmNvcmUud2luZG93cy5uZXQvbWFub2otYXR0cmlidXRlcy9hdHRyaWJ1dGVzLWNhdGVnb3J5LTIwMjEtMjAyMi5jc3Y7MjI1",
+              "Attributes": "Apple",
+              "@search.score": 9.777804,
+              "@search.reranker_score": null,
+              "@search.highlights": null,
+              "@search.captions": null
+            },
+            {
+              "Count1": "0",
+              "Country": "Argentina",
+              "Count2": "0",
+              "Attribute_Groups": "Product Type",
+              "Growth": "0.0",
+              "AzureSearch_DocumentKey": "aHR0cHM6Ly9lbWl0c2xsbXdvcmtzaG9wd2VzYS5ibG9iLmNvcmUud2luZG93cy5uZXQvbWFub2otYXR0cmlidXRlcy9hdHRyaWJ1dGVzLWNhdGVnb3J5LTIwMjEtMjAyMi5jc3Y7NDEx0",
+              "Attributes": "Apple Cider",
+              "@search.score": 7.6129117,
+              "@search.reranker_score": null,
+              "@search.highlights": null,
+              "@search.captions": null
+            },
+            {
+              "Count1": "44",
+              "Country": "Finland",
+              "Count2": "65",
+              "Attribute_Groups": "Flavour",
+              "Growth": "47.727272727272727272727272730",
+              "AzureSearch_DocumentKey": "aHR0cHM6Ly9lbWl0c2xsbXdvcmtzaG9wd2VzYS5ibG9iLmNvcmUud2luZG93cy5uZXQvbWFub2otYXR0cmlidXRlcy9hdHRyaWJ1dGVzLWNhdGVnb3J5LTIwMjEtMjAyMi5jc3Y7Nzg3OQ2",
+              "Attributes": "Apple",
+              "@search.score": 7.5233197,
+              "@search.reranker_score": null,
+              "@search.highlights": null,
+              "@search.captions": null
+            },
+            {
+              "Count1": "46",
+              "Country": "Australia",
+              "Count2": "64",
+              "Attribute_Groups": "Flavour",
+              "Growth": "39.130434782608695652173913040",
+              "AzureSearch_DocumentKey": "aHR0cHM6Ly9lbWl0c2xsbXdvcmtzaG9wd2VzYS5ibG9iLmNvcmUud2luZG93cy5uZXQvbWFub2otYXR0cmlidXRlcy9hdHRyaWJ1dGVzLWNhdGVnb3J5LTIwMjEtMjAyMi5jc3Y7ODk10",
+              "Attributes": "Apple",
+              "@search.score": 7.511792,
+              "@search.reranker_score": null,
+              "@search.highlights": null,
+              "@search.captions": null
+            },
+            {
+              "Count1": "0",
+              "Country": "Argentina",
+              "Count2": "0",
+              "Attribute_Groups": "Packaging",
+              "Growth": "0.0",
+              "AzureSearch_DocumentKey": "aHR0cHM6Ly9lbWl0c2xsbXdvcmtzaG9wd2VzYS5ibG9iLmNvcmUud2luZG93cy5uZXQvbWFub2otYXR0cmlidXRlcy9hdHRyaWJ1dGVzLWNhdGVnb3J5LTIwMjEtMjAyMi5jc3Y7MzM00",
+              "Attributes": "Bag In Box",
+              "@search.score": 7.0167494,
+              "@search.reranker_score": null,
+              "@search.highlights": null,
+              "@search.captions": null
+            }
+          ],
+          "start_time": 1730096694.893925,
+          "end_time": 1730096696.243262,
+          "error": null,
+          "children": [],
+          "node_name": "search_content",
+          "parent_id": "",
+          "id": "fb6a6af4-6ea3-4869-be8a-a803475a31af",
+          "function": "my_python_tool",
+          "system_metrics": {}
+        }
+      ],
+      "cached_run_id": null,
+      "cached_flow_run_id": null,
+      "logs": {
+        "stdout": "",
+        "stderr": ""
+      },
+      "system_metrics": {
+        "duration": 1.349337
+      },
+      "result": [
+        {
+          "Count1": "19",
+          "Country": "Argentina",
+          "Count2": "18",
+          "Attribute_Groups": "Flavour",
+          "Growth": "-5.2631578947368421052631578900",
+          "AzureSearch_DocumentKey": "aHR0cHM6Ly9lbWl0c2xsbXdvcmtzaG9wd2VzYS5ibG9iLmNvcmUud2luZG93cy5uZXQvbWFub2otYXR0cmlidXRlcy9hdHRyaWJ1dGVzLWNhdGVnb3J5LTIwMjEtMjAyMi5jc3Y7MjI1",
+          "Attributes": "Apple",
+          "@search.score": 9.777804,
+          "@search.reranker_score": null,
+          "@search.highlights": null,
+          "@search.captions": null
+        },
+        {
+          "Count1": "0",
+          "Country": "Argentina",
+          "Count2": "0",
+          "Attribute_Groups": "Product Type",
+          "Growth": "0.0",
+          "AzureSearch_DocumentKey": "aHR0cHM6Ly9lbWl0c2xsbXdvcmtzaG9wd2VzYS5ibG9iLmNvcmUud2luZG93cy5uZXQvbWFub2otYXR0cmlidXRlcy9hdHRyaWJ1dGVzLWNhdGVnb3J5LTIwMjEtMjAyMi5jc3Y7NDEx0",
+          "Attributes": "Apple Cider",
+          "@search.score": 7.6129117,
+          "@search.reranker_score": null,
+          "@search.highlights": null,
+          "@search.captions": null
+        },
+        {
+          "Count1": "44",
+          "Country": "Finland",
+          "Count2": "65",
+          "Attribute_Groups": "Flavour",
+          "Growth": "47.727272727272727272727272730",
+          "AzureSearch_DocumentKey": "aHR0cHM6Ly9lbWl0c2xsbXdvcmtzaG9wd2VzYS5ibG9iLmNvcmUud2luZG93cy5uZXQvbWFub2otYXR0cmlidXRlcy9hdHRyaWJ1dGVzLWNhdGVnb3J5LTIwMjEtMjAyMi5jc3Y7Nzg3OQ2",
+          "Attributes": "Apple",
+          "@search.score": 7.5233197,
+          "@search.reranker_score": null,
+          "@search.highlights": null,
+          "@search.captions": null
+        },
+        {
+          "Count1": "46",
+          "Country": "Australia",
+          "Count2": "64",
+          "Attribute_Groups": "Flavour",
+          "Growth": "39.130434782608695652173913040",
+          "AzureSearch_DocumentKey": "aHR0cHM6Ly9lbWl0c2xsbXdvcmtzaG9wd2VzYS5ibG9iLmNvcmUud2luZG93cy5uZXQvbWFub2otYXR0cmlidXRlcy9hdHRyaWJ1dGVzLWNhdGVnb3J5LTIwMjEtMjAyMi5jc3Y7ODk10",
+          "Attributes": "Apple",
+          "@search.score": 7.511792,
+          "@search.reranker_score": null,
+          "@search.highlights": null,
+          "@search.captions": null
+        },
+        {
+          "Count1": "0",
+          "Country": "Argentina",
+          "Count2": "0",
+          "Attribute_Groups": "Packaging",
+          "Growth": "0.0",
+          "AzureSearch_DocumentKey": "aHR0cHM6Ly9lbWl0c2xsbXdvcmtzaG9wd2VzYS5ibG9iLmNvcmUud2luZG93cy5uZXQvbWFub2otYXR0cmlidXRlcy9hdHRyaWJ1dGVzLWNhdGVnb3J5LTIwMjEtMjAyMi5jc3Y7MzM00",
+          "Attributes": "Bag In Box",
+          "@search.score": 7.0167494,
+          "@search.reranker_score": null,
+          "@search.highlights": null,
+          "@search.captions": null
+        }
+      ],
+      "message_format": "basic"
+    },
+    {
+      "node": "qna",
+      "flow_run_id": "87197260-f375-4abc-9df7-7e0642fbd268",
+      "run_id": "87197260-f375-4abc-9df7-7e0642fbd268_qna_0",
+      "status": "Completed",
+      "inputs": {
+        "is_env_ready": "Ready",
+        "question": "Growth of Apple in Argentina?",
+        "grounded_context": [
+          {
+            "Count1": "19",
+            "Country": "Argentina",
+            "Count2": "18",
+            "Attribute_Groups": "Flavour",
+            "Growth": "-5.2631578947368421052631578900",
+            "AzureSearch_DocumentKey": "aHR0cHM6Ly9lbWl0c2xsbXdvcmtzaG9wd2VzYS5ibG9iLmNvcmUud2luZG93cy5uZXQvbWFub2otYXR0cmlidXRlcy9hdHRyaWJ1dGVzLWNhdGVnb3J5LTIwMjEtMjAyMi5jc3Y7MjI1",
+            "Attributes": "Apple",
+            "@search.score": 9.777804,
+            "@search.reranker_score": null,
+            "@search.highlights": null,
+            "@search.captions": null
+          },
+          {
+            "Count1": "0",
+            "Country": "Argentina",
+            "Count2": "0",
+            "Attribute_Groups": "Product Type",
+            "Growth": "0.0",
+            "AzureSearch_DocumentKey": "aHR0cHM6Ly9lbWl0c2xsbXdvcmtzaG9wd2VzYS5ibG9iLmNvcmUud2luZG93cy5uZXQvbWFub2otYXR0cmlidXRlcy9hdHRyaWJ1dGVzLWNhdGVnb3J5LTIwMjEtMjAyMi5jc3Y7NDEx0",
+            "Attributes": "Apple Cider",
+            "@search.score": 7.6129117,
+            "@search.reranker_score": null,
+            "@search.highlights": null,
+            "@search.captions": null
+          },
+          {
+            "Count1": "44",
+            "Country": "Finland",
+            "Count2": "65",
+            "Attribute_Groups": "Flavour",
+            "Growth": "47.727272727272727272727272730",
+            "AzureSearch_DocumentKey": "aHR0cHM6Ly9lbWl0c2xsbXdvcmtzaG9wd2VzYS5ibG9iLmNvcmUud2luZG93cy5uZXQvbWFub2otYXR0cmlidXRlcy9hdHRyaWJ1dGVzLWNhdGVnb3J5LTIwMjEtMjAyMi5jc3Y7Nzg3OQ2",
+            "Attributes": "Apple",
+            "@search.score": 7.5233197,
+            "@search.reranker_score": null,
+            "@search.highlights": null,
+            "@search.captions": null
+          },
+          {
+            "Count1": "46",
+            "Country": "Australia",
+            "Count2": "64",
+            "Attribute_Groups": "Flavour",
+            "Growth": "39.130434782608695652173913040",
+            "AzureSearch_DocumentKey": "aHR0cHM6Ly9lbWl0c2xsbXdvcmtzaG9wd2VzYS5ibG9iLmNvcmUud2luZG93cy5uZXQvbWFub2otYXR0cmlidXRlcy9hdHRyaWJ1dGVzLWNhdGVnb3J5LTIwMjEtMjAyMi5jc3Y7ODk10",
+            "Attributes": "Apple",
+            "@search.score": 7.511792,
+            "@search.reranker_score": null,
+            "@search.highlights": null,
+            "@search.captions": null
+          },
+          {
+            "Count1": "0",
+            "Country": "Argentina",
+            "Count2": "0",
+            "Attribute_Groups": "Packaging",
+            "Growth": "0.0",
+            "AzureSearch_DocumentKey": "aHR0cHM6Ly9lbWl0c2xsbXdvcmtzaG9wd2VzYS5ibG9iLmNvcmUud2luZG93cy5uZXQvbWFub2otYXR0cmlidXRlcy9hdHRyaWJ1dGVzLWNhdGVnb3J5LTIwMjEtMjAyMi5jc3Y7MzM00",
+            "Attributes": "Bag In Box",
+            "@search.score": 7.0167494,
+            "@search.reranker_score": null,
+            "@search.highlights": null,
+            "@search.captions": null
+          }
+        ]
+      },
+      "output": "The growth rate of Apple in Argentina from 2021 to 2022 is -5.26%.",
+      "metrics": null,
+      "error": null,
+      "parent_run_id": "87197260-f375-4abc-9df7-7e0642fbd268_0",
+      "start_time": "2024-10-28T11:54:56.245259Z",
+      "end_time": "2024-10-28T11:54:57.995939Z",
+      "index": 0,
+      "api_calls": [
+        {
+          "name": "qna",
+          "type": "Function",
+          "inputs": {
+            "is_env_ready": "Ready",
+            "question": "Growth of Apple in Argentina?",
+            "grounded_context": [
+              {
+                "Count1": "19",
+                "Country": "Argentina",
+                "Count2": "18",
+                "Attribute_Groups": "Flavour",
+                "Growth": "-5.2631578947368421052631578900",
+                "AzureSearch_DocumentKey": "aHR0cHM6Ly9lbWl0c2xsbXdvcmtzaG9wd2VzYS5ibG9iLmNvcmUud2luZG93cy5uZXQvbWFub2otYXR0cmlidXRlcy9hdHRyaWJ1dGVzLWNhdGVnb3J5LTIwMjEtMjAyMi5jc3Y7MjI1",
+                "Attributes": "Apple",
+                "@search.score": 9.777804,
+                "@search.reranker_score": null,
+                "@search.highlights": null,
+                "@search.captions": null
+              },
+              {
+                "Count1": "0",
+                "Country": "Argentina",
+                "Count2": "0",
+                "Attribute_Groups": "Product Type",
+                "Growth": "0.0",
+                "AzureSearch_DocumentKey": "aHR0cHM6Ly9lbWl0c2xsbXdvcmtzaG9wd2VzYS5ibG9iLmNvcmUud2luZG93cy5uZXQvbWFub2otYXR0cmlidXRlcy9hdHRyaWJ1dGVzLWNhdGVnb3J5LTIwMjEtMjAyMi5jc3Y7NDEx0",
+                "Attributes": "Apple Cider",
+                "@search.score": 7.6129117,
+                "@search.reranker_score": null,
+                "@search.highlights": null,
+                "@search.captions": null
+              },
+              {
+                "Count1": "44",
+                "Country": "Finland",
+                "Count2": "65",
+                "Attribute_Groups": "Flavour",
+                "Growth": "47.727272727272727272727272730",
+                "AzureSearch_DocumentKey": "aHR0cHM6Ly9lbWl0c2xsbXdvcmtzaG9wd2VzYS5ibG9iLmNvcmUud2luZG93cy5uZXQvbWFub2otYXR0cmlidXRlcy9hdHRyaWJ1dGVzLWNhdGVnb3J5LTIwMjEtMjAyMi5jc3Y7Nzg3OQ2",
+                "Attributes": "Apple",
+                "@search.score": 7.5233197,
+                "@search.reranker_score": null,
+                "@search.highlights": null,
+                "@search.captions": null
+              },
+              {
+                "Count1": "46",
+                "Country": "Australia",
+                "Count2": "64",
+                "Attribute_Groups": "Flavour",
+                "Growth": "39.130434782608695652173913040",
+                "AzureSearch_DocumentKey": "aHR0cHM6Ly9lbWl0c2xsbXdvcmtzaG9wd2VzYS5ibG9iLmNvcmUud2luZG93cy5uZXQvbWFub2otYXR0cmlidXRlcy9hdHRyaWJ1dGVzLWNhdGVnb3J5LTIwMjEtMjAyMi5jc3Y7ODk10",
+                "Attributes": "Apple",
+                "@search.score": 7.511792,
+                "@search.reranker_score": null,
+                "@search.highlights": null,
+                "@search.captions": null
+              },
+              {
+                "Count1": "0",
+                "Country": "Argentina",
+                "Count2": "0",
+                "Attribute_Groups": "Packaging",
+                "Growth": "0.0",
+                "AzureSearch_DocumentKey": "aHR0cHM6Ly9lbWl0c2xsbXdvcmtzaG9wd2VzYS5ibG9iLmNvcmUud2luZG93cy5uZXQvbWFub2otYXR0cmlidXRlcy9hdHRyaWJ1dGVzLWNhdGVnb3J5LTIwMjEtMjAyMi5jc3Y7MzM00",
+                "Attributes": "Bag In Box",
+                "@search.score": 7.0167494,
+                "@search.reranker_score": null,
+                "@search.highlights": null,
+                "@search.captions": null
+              }
+            ]
+          },
+          "output": "The growth rate of Apple in Argentina from 2021 to 2022 is -5.26%.",
+          "start_time": 1730096696.245259,
+          "end_time": 1730096697.994937,
+          "error": null,
+          "children": [
+            {
+              "name": "openai_chat",
+              "type": "LLM",
+              "inputs": {
+                "model": "gpt-35-turbo",
+                "messages": [
+                  {
+                    "role": "system",
+                    "content": "Help with answering growth rate of different attributes associated to different countries in 2021 & 2022. Consider Count1 as 2021 and Count2 as 2022 from the data. Use Growth field value for the same. No need to let user know meta info of groundedcontext entries."
+                  },
+                  {
+                    "role": "user",
+                    "content": "Context: [{\"Count1\": \"19\", \"Country\": \"Argentina\", \"Count2\": \"18\", \"Attribute_Groups\": \"Flavour\", \"Growth\": \"-5.2631578947368421052631578900\", \"AzureSearch_DocumentKey\": \"aHR0cHM6Ly9lbWl0c2xsbXdvcmtzaG9wd2VzYS5ibG9iLmNvcmUud2luZG93cy5uZXQvbWFub2otYXR0cmlidXRlcy9hdHRyaWJ1dGVzLWNhdGVnb3J5LTIwMjEtMjAyMi5jc3Y7MjI1\", \"Attributes\": \"Apple\", \"@search.score\": 9.777804, \"@search.reranker_score\": null, \"@search.highlights\": null, \"@search.captions\": null}, {\"Count1\": \"0\", \"Country\": \"Argentina\", \"Count2\": \"0\", \"Attribute_Groups\": \"Product Type\", \"Growth\": \"0.0\", \"AzureSearch_DocumentKey\": \"aHR0cHM6Ly9lbWl0c2xsbXdvcmtzaG9wd2VzYS5ibG9iLmNvcmUud2luZG93cy5uZXQvbWFub2otYXR0cmlidXRlcy9hdHRyaWJ1dGVzLWNhdGVnb3J5LTIwMjEtMjAyMi5jc3Y7NDEx0\", \"Attributes\": \"Apple Cider\", \"@search.score\": 7.6129117, \"@search.reranker_score\": null, \"@search.highlights\": null, \"@search.captions\": null}, {\"Count1\": \"44\", \"Country\": \"Finland\", \"Count2\": \"65\", \"Attribute_Groups\": \"Flavour\", \"Growth\": \"47.727272727272727272727272730\", \"AzureSearch_DocumentKey\": \"aHR0cHM6Ly9lbWl0c2xsbXdvcmtzaG9wd2VzYS5ibG9iLmNvcmUud2luZG93cy5uZXQvbWFub2otYXR0cmlidXRlcy9hdHRyaWJ1dGVzLWNhdGVnb3J5LTIwMjEtMjAyMi5jc3Y7Nzg3OQ2\", \"Attributes\": \"Apple\", \"@search.score\": 7.5233197, \"@search.reranker_score\": null, \"@search.highlights\": null, \"@search.captions\": null}, {\"Count1\": \"46\", \"Country\": \"Australia\", \"Count2\": \"64\", \"Attribute_Groups\": \"Flavour\", \"Growth\": \"39.130434782608695652173913040\", \"AzureSearch_DocumentKey\": \"aHR0cHM6Ly9lbWl0c2xsbXdvcmtzaG9wd2VzYS5ibG9iLmNvcmUud2luZG93cy5uZXQvbWFub2otYXR0cmlidXRlcy9hdHRyaWJ1dGVzLWNhdGVnb3J5LTIwMjEtMjAyMi5jc3Y7ODk10\", \"Attributes\": \"Apple\", \"@search.score\": 7.511792, \"@search.reranker_score\": null, \"@search.highlights\": null, \"@search.captions\": null}, {\"Count1\": \"0\", \"Country\": \"Argentina\", \"Count2\": \"0\", \"Attribute_Groups\": \"Packaging\", \"Growth\": \"0.0\", \"AzureSearch_DocumentKey\": \"aHR0cHM6Ly9lbWl0c2xsbXdvcmtzaG9wd2VzYS5ibG9iLmNvcmUud2luZG93cy5uZXQvbWFub2otYXR0cmlidXRlcy9hdHRyaWJ1dGVzLWNhdGVnb3J5LTIwMjEtMjAyMi5jc3Y7MzM00\", \"Attributes\": \"Bag In Box\", \"@search.score\": 7.0167494, \"@search.reranker_score\": null, \"@search.highlights\": null, \"@search.captions\": null}]\n\n Query: Growth of Apple in Argentina?"
+                  }
+                ]
+              },
+              "output": {
+                "id": "chatcmpl-ANIcXxEoJpm1Sacf2U6SvDFm0LwKz",
+                "choices": [
+                  {
+                    "finish_reason": "stop",
+                    "index": 0,
+                    "logprobs": null,
+                    "message": {
+                      "content": "The growth rate of Apple in Argentina from 2021 to 2022 is -5.26%.",
+                      "role": "assistant",
+                      "function_call": null,
+                      "tool_calls": null
+                    },
+                    "content_filter_results": {
+                      "hate": {
+                        "filtered": false,
+                        "severity": "safe"
+                      },
+                      "self_harm": {
+                        "filtered": false,
+                        "severity": "safe"
+                      },
+                      "sexual": {
+                        "filtered": false,
+                        "severity": "safe"
+                      },
+                      "violence": {
+                        "filtered": false,
+                        "severity": "safe"
+                      }
+                    }
+                  }
+                ],
+                "created": 1730116485,
+                "model": "gpt-35-turbo",
+                "object": "chat.completion",
+                "system_fingerprint": "fp_808245b034",
+                "usage": {
+                  "completion_tokens": 21,
+                  "prompt_tokens": 1050,
+                  "total_tokens": 1071
+                },
+                "prompt_filter_results": [
+                  {
+                    "prompt_index": 0,
+                    "content_filter_results": {
+                      "hate": {
+                        "filtered": false,
+                        "severity": "safe"
+                      },
+                      "jailbreak": {
+                        "filtered": false,
+                        "detected": false
+                      },
+                      "self_harm": {
+                        "filtered": false,
+                        "severity": "safe"
+                      },
+                      "sexual": {
+                        "filtered": false,
+                        "severity": "safe"
+                      },
+                      "violence": {
+                        "filtered": false,
+                        "severity": "safe"
+                      }
+                    }
+                  }
+                ]
+              },
+              "start_time": 1730096696.520486,
+              "end_time": 1730096697.994937,
+              "error": null,
+              "children": [],
+              "node_name": null,
+              "parent_id": "86b810bc-12e3-4b52-b4b4-0a2b2d6eb80e",
+              "id": "44b15ac0-587e-4b7a-8630-57e3b8df8bfb",
+              "function": "openai.resources.chat.completions.Completions.create",
+              "system_metrics": {
+                "completion_tokens": 21,
+                "prompt_tokens": 1050,
+                "total_tokens": 1071
+              }
+            }
+          ],
+          "node_name": "qna",
+          "parent_id": "",
+          "id": "86b810bc-12e3-4b52-b4b4-0a2b2d6eb80e",
+          "function": "qna",
+          "system_metrics": {
+            "completion_tokens": 21,
+            "prompt_tokens": 1050,
+            "total_tokens": 1071
+          }
+        }
+      ],
+      "cached_run_id": null,
+      "cached_flow_run_id": null,
+      "logs": {
+        "stdout": "",
+        "stderr": ""
+      },
+      "system_metrics": {
+        "completion_tokens": 21,
+        "prompt_tokens": 1050,
+        "total_tokens": 1071,
+        "duration": 1.75068
+      },
+      "result": "The growth rate of Apple in Argentina from 2021 to 2022 is -5.26%.",
+      "message_format": "basic"
+    }
+  ]
+}

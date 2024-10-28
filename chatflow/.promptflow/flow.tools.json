@@ -1,0 +1,135 @@
+{
+  "package": {},
+  "code": {
+    "search_content.py": {
+      "name": "search_content.py",
+      "type": "python",
+      "inputs": {
+        "is_env_ready": {
+          "type": [
+            "string"
+          ],
+          "allow_manual_entry": false,
+          "is_multi_select": false,
+          "input_type": "default",
+          "value": "${setup_ai_search.output}",
+          "id": "pswl6gng"
+        },
+        "question": {
+          "type": [
+            "string"
+          ],
+          "allow_manual_entry": false,
+          "is_multi_select": false,
+          "input_type": "default",
+          "value": "${inputs.question}",
+          "id": "iwoxiinc"
+        }
+      },
+      "source": "search_content.py",
+      "function": "my_python_tool",
+      "is_builtin": false,
+      "enable_kwargs": false,
+      "tool_state": "stable",
+      "toolId": "search_content.py"
+    },
+    "setup_ai_search.py": {
+      "type": "python",
+      "inputs": {
+        "connection": {
+          "type": [
+            "CognitiveSearchConnection"
+          ]
+        },
+        "config": {
+          "type": [
+            "object"
+          ]
+        }
+      },
+      "source": "setup_ai_search.py",
+      "function": "setup_ai_search",
+      "name": "setup_ai_search.py",
+      "toolId": "setup_ai_search.py"
+    },
+    "setup_env.py": {
+      "type": "python",
+      "inputs": {
+        "connection": {
+          "type": [
+            "AzureOpenAIConnection",
+            "OpenAIConnection"
+          ]
+        },
+        "config": {
+          "type": [
+            "object"
+          ]
+        }
+      },
+      "source": "setup_env.py",
+      "function": "setup_env",
+      "name": "setup_env.py",
+      "toolId": "setup_env.py"
+    },
+    "qna.py": {
+      "name": "qna.py",
+      "type": "python",
+      "inputs": {
+        "grounded_context": {
+          "type": [
+            "list"
+          ],
+          "allow_manual_entry": false,
+          "is_multi_select": false,
+          "input_type": "default",
+          "value": "${search_content.output}",
+          "id": "zhrjh9vj"
+        },
+        "is_env_ready": {
+          "type": [
+            "bool"
+          ],
+          "allow_manual_entry": false,
+          "is_multi_select": false,
+          "input_type": "default",
+          "value": "${setup_env.output}",
+          "id": "enp0mgl2"
+        },
+        "prompt": {
+          "type": [
+            "string"
+          ],
+          "allow_manual_entry": false,
+          "is_multi_select": false,
+          "input_type": "default"
+        },
+        "question": {
+          "type": [
+            "string"
+          ],
+          "allow_manual_entry": false,
+          "is_multi_select": false,
+          "input_type": "default",
+          "value": "${inputs.question}",
+          "id": "2ebqtrqr"
+        }
+      },
+      "source": "qna.py",
+      "function": "qna",
+      "is_builtin": false,
+      "enable_kwargs": false,
+      "tool_state": "stable",
+      "toolId": "qna.py"
+    },
+    "initial_prompt.jinja2": {
+      "name": "initial_prompt.jinja2",
+      "type": "prompt",
+      "source": "initial_prompt.jinja2",
+      "is_builtin": false,
+      "enable_kwargs": false,
+      "tool_state": "stable",
+      "toolId": "initial_prompt.jinja2"
+    }
+  }
+}

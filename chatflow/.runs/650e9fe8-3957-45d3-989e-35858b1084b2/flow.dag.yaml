@@ -1,0 +1,76 @@
+inputs:
+  chat_history:
+    type: list
+    default: []
+    is_chat_input: false
+    is_chat_history: true
+  question:
+    type: string
+    default: Growth of Apple in Argentina?
+    is_chat_input: true
+  config:
+    type: object
+    default:
+      OPENAI_API_KEY: b6068890be79491a904408c62e66077a
+      EMBEDDING_MODEL_DEPLOYMENT_NAME: text-embedding-ada-002
+      CHAT_MODEL_DEPLOYMENT_NAME: gpt-35-turbo
+      PROMPT_TOKEN_LIMIT: 3000
+      MAX_COMPLETION_TOKENS: 1024
+      VERBOSE: true
+      CHUNK_SIZE: 1024
+      CHUNK_OVERLAP: 64
+    is_chat_input: false
+outputs:
+  answer:
+    type: string
+    reference: ${qna.output}
+    is_chat_output: true
+nodes:
+- name: setup_env
+  type: python
+  source:
+    type: code
+    path: setup_env.py
+  inputs:
+    connection: openaiconnection
+    config: ${inputs.config}
+  use_variants: false
+- name: qna
+  type: python
+  source:
+    type: code
+    path: qna.py
+  inputs:
+    is_env_ready: ${setup_env.output}
+    question: ${inputs.question}
+    grounded_context: ${search_content.output}
+  use_variants: false
+- name: search_content
+  type: python
+  source:
+    type: code
+    path: search_content.py
+  inputs:
+    is_env_ready: ${setup_ai_search.output}
+    question: ${inputs.question}
+  use_variants: false
+- name: setup_ai_search
+  type: python
+  source:
+    type: code
+    path: setup_ai_search.py
+  inputs:
+    connection: aisearch
+    config: ${inputs.config}
+  use_variants: false
+- name: initial_prompt
+  type: prompt
+  source:
+    type: code
+    path: initial_prompt.jinja2
+  inputs: {}
+  use_variants: false
+node_variants: {}
+$schema: https://azuremlschemas.azureedge.net/promptflow/latest/Flow.schema.json
+environment:
+  python_requirements_txt: requirements.txt
